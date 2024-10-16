@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class Loader {
 
     private static final String marker="*";
+    private static String userHome = System.getProperty("user.dir");
 
     private static ArrayList<Question> questionList = new ArrayList<>();
     private static ArrayList<Answer> answerList = new ArrayList<>();
@@ -16,7 +17,8 @@ public class Loader {
 
     private static void loadQuestions() throws IOException {
         String line;
-        BufferedReader reader = new BufferedReader(new FileReader("questions.txt"));
+        System.out.println(userHome);
+        BufferedReader reader = new BufferedReader(new FileReader(userHome+"/docs/questions.txt"));
         StringBuilder builder = new StringBuilder();
         while ((line=reader.readLine())!=null) {
             if(line.equals(marker)){
@@ -31,7 +33,7 @@ public class Loader {
 
     private static void loadAnswers() throws IOException {
         String line;
-        BufferedReader reader = new BufferedReader(new FileReader("answers.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader(userHome+"/docs/answers.txt"));
         StringBuilder builder = new StringBuilder();
         while ((line=reader.readLine())!=null) {
             if(line.equals(marker)){
