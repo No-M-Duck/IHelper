@@ -8,8 +8,6 @@
 Каждый вопрос и ответ разделяются строкой с ОДНИМ символом *.
 Порядок вопросов должен совпадать с порядком ответов.
 
-## Как это запустить?
-..\IHelper\out\artifacts\IHelper_jar находится jar файл, который запускает приложение
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
