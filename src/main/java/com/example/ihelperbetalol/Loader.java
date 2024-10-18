@@ -29,6 +29,7 @@ public class Loader {
             builder.append(line).append("\n");
 
         }
+        reader.close();
     }
 
     private static void loadAnswers() throws IOException {
@@ -45,7 +46,7 @@ public class Loader {
 
         }
 
-
+        reader.close();
     }
 
 
