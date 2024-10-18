@@ -32,7 +32,6 @@ public class Service {
             return getQuestion();
         }
         Question question = sortedQuestions.get(random.nextInt(sortedQuestions.size()));
-        question.prioritize();
         number = question.getId();
         return question;
 
@@ -40,5 +39,9 @@ public class Service {
 
     public static Answer getNumberAnswer() throws IOException{
         return Loader.getAnswerList().get(number);
+    }
+
+    public static void upPriority() throws IOException {
+        Loader.getQuestionList().get(number).prioritize();
     }
 }
