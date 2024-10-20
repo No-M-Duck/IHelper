@@ -2,8 +2,6 @@ package com.example.ihelperbetalol;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
 
 
 public class Loader {
@@ -14,6 +12,29 @@ public class Loader {
     private static ArrayList<Question> questionList = new ArrayList<>();
     private static ArrayList<Answer> answerList = new ArrayList<>();
 
+
+    public static void loadDoc(File path,boolean isQuestion) throws IOException {
+        String line;
+        BufferedReader reader = new BufferedReader(new FileReader(path));
+        StringBuilder builder = new StringBuilder();
+        while ((line=reader.readLine())!=null) {
+            if(line.equals(marker)){
+                if(isQuestion){
+                    questionList.add(new Question(builder.toString()));
+                    builder.setLength(0);
+                    continue;
+                }else {
+                    answerList.add(new Answer(builder.toString()));
+                    builder.setLength(0);
+                    continue;
+                }
+
+            }
+            builder.append(line).append("\n");
+
+        }
+        reader.close();
+    }
 
     private static void loadQuestions() throws IOException {
         String line;
@@ -38,7 +59,7 @@ public class Loader {
         StringBuilder builder = new StringBuilder();
         while ((line=reader.readLine())!=null) {
             if(line.equals(marker)){
-                answerList.add(new Question(builder.toString()));
+                answerList.add(new Answer(builder.toString()));
                 builder.setLength(0);
                 continue;
             }

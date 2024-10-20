@@ -17,17 +17,18 @@
             <Font size="10.0" />
          </font>
       </Label>
-      <TextArea fx:id="text" layoutX="13.0" layoutY="90.0" prefHeight="262.0" prefWidth="569.0" wrapText="true" />
-      <Button fx:id="btnGetQuestion" layoutX="14.0" layoutY="43.0" mnemonicParsing="false" onAction="#getQuestion" prefHeight="40.0" prefWidth="175.0" text="Получить вопрос">
+      <TextArea fx:id="text" layoutX="12.0" layoutY="95.0" prefHeight="262.0" prefWidth="569.0" wrapText="true" />
+      <Button fx:id="btnGetQuestion" layoutX="12.0" layoutY="43.0" mnemonicParsing="false" onAction="#getQuestion" prefHeight="40.0" prefWidth="175.0" text="Получить вопрос">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnGetAnswer" layoutX="189.0" layoutY="43.0" mnemonicParsing="false" onAction="#getAnswer" prefHeight="40.0" prefWidth="175.0" text="Проверить ответ">
+      <Button fx:id="btnGetAnswer" layoutX="187.0" layoutY="44.0" mnemonicParsing="false" onAction="#getAnswer" prefHeight="40.0" prefWidth="175.0" text="Проверить ответ">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnCorrect" layoutX="443.0" layoutY="43.0" mnemonicParsing="false" onAction="#upPrioritet" prefHeight="40.0" text="Верно" textFill="#008503" />
+      <Button fx:id="btnCorrect" layoutX="362.0" layoutY="39.0" mnemonicParsing="false" onAction="#upPrioritet" prefHeight="50.0" prefWidth="100.0" text="Верно" textFill="#008503" />
+      <Button fx:id="uploadQandA" layoutX="481.0" layoutY="44.0" mnemonicParsing="false" onAction="#uploadQandA" prefHeight="40.0" prefWidth="100.0" text="Upload Q" />
    </children>
 </AnchorPane>

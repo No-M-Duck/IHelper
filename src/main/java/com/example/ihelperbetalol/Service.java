@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
  * Если ты знаешь как это сделать лучше, то напиши мне в Telegram https://t.me/amoraltobudet
  */
 public class Service {
-    private static Random random = new Random();
+    private static final Random random = new Random();
     private static int number = 0;
 
     private static int priority = 1;
