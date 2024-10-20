@@ -56,14 +56,25 @@ public class HelloController {
     @FXML
     void getQuestion(ActionEvent event) {
         try {
+            lastQuestionMessage(Service.lastQestion());
+            System.out.println(Loader.getQuestionList().size());
+            System.out.println(Service.lastQestion());
             text.setText(Service.getQuestion().getText());
             btnCorrect.setDisable(true);
             btnGetQuestion.setDisable(true);
             btnGetAnswer.setDisable(false);
+
         } catch (IOException exception) {
             error.setText("Кажется возникла проблема с загрузкой файлов. Будь умницей, проверь всё еще раз");
         }
 
+    }
+    private void lastQuestionMessage(boolean lastQ){
+        if(lastQ) {
+            error.setText("Последний вопрос");
+        }else {
+            error.setText("");
+        }
     }
 
     @FXML

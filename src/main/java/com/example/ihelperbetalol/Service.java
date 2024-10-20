@@ -44,4 +44,8 @@ public class Service {
     public static void upPriority() throws IOException {
         Loader.getQuestionList().get(number).prioritize();
     }
+
+    public static boolean lastQestion() throws IOException {
+        return Loader.getQuestionList().stream().filter(q->q.getCount()<priority).collect(Collectors.toList()).size()==1;
+    }
 }
